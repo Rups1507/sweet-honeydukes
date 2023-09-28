@@ -9,4 +9,6 @@ public interface UserService {
 	public User updateUser(User user);
 	public User cancelUser(Integer userId);
 	public List<User> showAllUser();
+
+	
 }
