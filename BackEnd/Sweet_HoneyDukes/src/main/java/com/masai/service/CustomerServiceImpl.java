@@ -6,34 +6,98 @@ import com.masai.model.Customer;
 
 public class CustomerServiceImpl implements CustomerService {
 
-	@Override
-	public Customer addCustomer(Customer customer) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	@Autowired
+	private CustomerRepo customerRepo;
+	
+	@Autowired
+	private CartRepo cartrepo;
+	
 
-	@Override
-	public Customer updateCustomer(Customer customer) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+@Override
+public Customer addCustomer(Customer customer) throws CustomerException {
+    if (customerRepo.existsByCustomerEmail(customer.getCustomerEmail())) {
+        throw new CustomerException("Email id already used");
+    }
+    log.debug("Calling save method from CustomerJpa Repository");
 
-	@Override
-	public Customer cancelCustomer(Integer customerId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    customer.setRole("USER");
 
-	@Override
-	public List<Customer> showAllCustomer() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    Cart cart = new Cart();
+    cart.setGrandTotal(0.0);
+    cart.setProductCount(0);
+    cart.setTotal(0.0);
 
-	@Override
-	public List<Customer> showAllCustomer(Integer customerId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    cartrepo.save(cart);
+
+    customer.setCart(cart);
+    Customer savedCustomer = customerRepo.save(customer);
+
+    log.info("Customer saved successfully");
+
+    return savedCustomer;
+}
+
+@Override
+public Customer updateCustomer(Customer customer, Integer customerId) throws CustomerException {
+    log.debug("Calling findById method from CustomerJpa Repository");
+    Optional<Customer> opt = customerRepo.findById(customerId);
+
+    if (opt.isPresent()) {
+        Customer existingCustomer = opt.get();
+        existingCustomer.setCustomerName(customer.getCustomerName());
+        existingCustomer.setSweetOrders(customer.getSweetOrders());
+        existingCustomer.setCart(customer.getCart());
+
+        log.info("Customer name, its orders, and its cart updated successfully");
+        return existingCustomer;
+    } else {
+        throw new CustomerException("User with this customerId is not present");
+    }
+}
+
+
+@Override
+public Customer cancelCustomer(Integer customerId) throws CustomerException {
+    log.debug("Calling findById method from CustomerJpa Repository");
+
+    Customer customer = customerRepo.findById(customerId)
+            .orElseThrow(() -> new CustomerException("No customer found with this ID"));
+
+    customerRepo.delete(customer);
+
+    log.info("Customer deleted successfully");
+
+    return customer;
+}
+
+
+@Override
+public List<Customer> showAllCustomers() throws CustomerException {
+    log.debug("Calling findAll method from CustomerJpa Repository");
+    List<Customer> customers = customerRepo.findAll();
+
+    if (customers.isEmpty()) {
+        log.warn("No customers found in the database.");
+        throw new CustomerException("No customer present in the database");
+    } else {
+        log.info("All customers retrieved successfully.");
+        return customers;
+    }
+}
+
+
+@Override
+public Customer showCustomerById(Integer userId) throws CustomerException {
+    log.debug("Calling findById method from CustomerJpa Repository");
+    
+    Customer customer = customerRepo.findById(userId)
+            .orElseThrow(() -> new CustomerException("Customer does not exist"));
+    
+    log.info("Customer retrieved successfully");
+    
+    return customer;
+}
+
+
 
 }

@@ -25,12 +25,6 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Cart {
 
-	
-	@Override
-	public String toString() {
-		return "Cart [cartId=" + cartId + ", grandTotal=" + grandTotal + ", products=" + products + ", productCount="
-				+ productCount + ", total=" + total + "]";
-	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cartId;
@@ -45,45 +39,5 @@ public class Cart {
 	
 	private Integer productCount=this.products.size();
 	private Double total;
-	public Cart(Integer cartId, Double grandTotal, List<Product> products, Integer productCount, Double total) {
-		super();
-		this.cartId = cartId;
-		this.grandTotal = grandTotal;
-		this.products = products;
-		this.productCount = productCount;
-		this.total = total;
-	}
-	public Integer getCartId() {
-		return cartId;
-	}
-	public void setCartId(Integer cartId) {
-		this.cartId = cartId;
-	}
-	public Double getGrandTotal() {
-		return grandTotal;
-	}
-	public void setGrandTotal(Double grandTotal) {
-		this.grandTotal = grandTotal;
-	}
-	public List<Product> getProducts() {
-		return products;
-	}
-	public void setProducts(List<Product> products) {
-		this.products = products;
-	}
-	public Integer getProductCount() {
-		return productCount;
-	}
-	public void setProductCount(Integer productCount) {
-		this.productCount = productCount;
-	}
-	public Double getTotal() {
-		return total;
-	}
-	public void setTotal(Double total) {
-		this.total = total;
-	}
-	
-	
-	
+
 }

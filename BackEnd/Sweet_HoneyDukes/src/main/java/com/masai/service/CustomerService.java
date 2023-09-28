@@ -11,5 +11,5 @@ public interface CustomerService {
 	public List<Customer> showAllCustomer();
 	
 	//check with IA 
-	public List<Customer> showAllCustomer(Integer customerId);
+	public List<Customer> showCustomerById(Integer customerId);
 }
