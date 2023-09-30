@@ -2,8 +2,17 @@ package com.masai.service;
 
 import java.util.List;
 
-import com.masai.model.Product;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.masai.exception.ProductException;
+import com.masai.model.Product;
+import com.masai.repository.ProductRepo;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
 public class ProductServiceImpl implements ProductService {
 
 	@Autowired

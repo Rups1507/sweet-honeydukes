@@ -1,39 +1,65 @@
 package com.masai.service;
 
 import java.util.List;
+import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.masai.exception.NoRecordsFoundException;
 import com.masai.model.OrderBill;
+import com.masai.repository.OrderBillRepo;
 
+@Service
 public class OrderBillServiceImpl implements OrderBillService {
-
+	
+	@Autowired
+	private OrderBillRepo orderBillRepo;	
+	
 	@Override
 	public OrderBill addOrderBill(OrderBill orderBill) {
-		// TODO Auto-generated method stub
-		return null;
+		orderBillRepo.save(orderBill);
+		return orderBill;
 	}
 
 	@Override
-	public OrderBill updateOrderBill(OrderBill orderBill) {
-		// TODO Auto-generated method stub
-		return null;
+	public OrderBill updateOrderBill(OrderBill orderBill) throws NoRecordsFoundException {
+		Optional<OrderBill> op = orderBillRepo.findById(orderBill.getOrderBillId());
+		if(op.isPresent()) {
+			orderBillRepo.save(op.get());
+			return op.get();
+		}
+		throw new NoRecordsFoundException("No Order Bill found with orderBillId: " + orderBill.getOrderBillId());
 	}
 
 	@Override
-	public OrderBill cancelOrderBill(Integer orderBillId) {
-		// TODO Auto-generated method stub
-		return null;
+	public OrderBill cancelOrderBill(Integer orderBillId) throws NoRecordsFoundException {
+		Optional<OrderBill> op = orderBillRepo.findById(orderBillId);
+		if(op.isPresent()) {
+			orderBillRepo.deleteById(orderBillId);
+			return op.get();
+		}
+		throw new NoRecordsFoundException("No Order Bill found with orderBillId: " + orderBillId);
 	}
 
 	@Override
-	public List<OrderBill> showAllOrderBill() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<OrderBill> showAllOrderBill() throws NoRecordsFoundException {
+		List<OrderBill> orderBill = orderBillRepo.findAll();
+		if(!orderBill.isEmpty()) {
+			return orderBill;
+		}
+		throw new NoRecordsFoundException("No Order Bill found ");
 	}
 
 	@Override
-	public List<OrderBill> showAllOrderBill(Integer orderBillId) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<OrderBill> showAllOrderBill(Integer orderBillId) throws NoRecordsFoundException {
+		Optional<OrderBill> op = orderBillRepo.findById(orderBillId);
+		if(op.isPresent()) {
+			List<OrderBill> list = null;
+			list.add(op.get());
+			return list;
+		}
+		throw new NoRecordsFoundException("No Order Bill found with orderBillId: " + orderBillId);
 	}
 
 }
