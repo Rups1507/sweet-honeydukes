@@ -16,7 +16,9 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Data
 @AllArgsConstructor
@@ -59,11 +61,20 @@ public class Product {
 	private Category category;
 
 
-	@Override
-	public String toString() {
-		return "Product [productid=" + productid + ", name=" + name + ", photopath=" + photopath + ", price=" + price
-				+ ", description=" + description + ", available=" + available + ", quantity=" + quantity + "]";
+	public Integer getProductid() {
+		return productid;
 	}
+
+
+//	@Override
+//	public String toString() {
+//		return "Product [productid=" + productid + ", name=" + name + ", photopath=" + photopath + ", price=" + price
+//				+ ", description=" + description + ", available=" + available + ", quantity=" + quantity + "]";
+//	}
+
+
+
+
 
 
 	

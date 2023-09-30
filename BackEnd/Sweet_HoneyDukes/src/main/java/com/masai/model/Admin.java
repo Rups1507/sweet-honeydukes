@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 
-public class Admin {
+public class Admin extends User {
   @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int adminId;

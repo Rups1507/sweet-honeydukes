@@ -1,12 +1,15 @@
 package com.masai.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.masai.exception.ProductException;
+import com.masai.exception.NoRecordsFoundException;
+
 import com.masai.model.Product;
+import com.masai.repository.CategoryRepo;
 import com.masai.repository.ProductRepo;
 
 import lombok.extern.slf4j.Slf4j;
@@ -18,70 +21,50 @@ public class ProductServiceImpl implements ProductService {
 	@Autowired
 	private ProductRepo productRepo;
 	
-	@Autowired
-	private CategoryRepo categoryRepo;
 	
-	@Override
-	public Product addProductToCategory(Integer productId, Integer categoryId)throws ProductException,CategoryException {
-		log.debug("Calling findbyId method from ProductJpa Repository");
-		Optional<Product> opt= productRepo.findById(productId);
-		if(opt.isEmpty()) {
-			throw new ProductException("No product found");
-		}
-		Product product=opt.get();
-		Optional<Category> cat= categoryRepo.findById(categoryId);
-		if(cat.isEmpty())throw new CategoryException("No category found");
-		Category category=cat.get();
-		product.setCategory(category);
-		return productRepo.save(product);
+@Override
+public Product addProduct(Product product) throws NoRecordsFoundException {
+	productRepo.save(product);
+	return product;
+  
+}
+
+
+@Override
+public Product updateProduct(Product product) throws NoRecordsFoundException {
+	Optional<Product> op = productRepo.findById(product.getProductid());
+	if(op.isPresent()) {
+		productRepo.save(op.get());
+		return product;
+	}
+	else {
+		throw new NoRecordsFoundException("No Product available with productId: "+product.getProductid());
 	}
 	
-	
-@Override
-public Product addProduct(Product product, Integer categoryId) throws ProductException {
-    validateProductNotNull(product);
-    logDebug("Calling save method from ProductJpa Repository");
-    Category category = getCategoryById(categoryId);
-    product.setCategory(category);
-    Product savedProduct = saveProduct(product);
-    logInfo("Product saved successfully");
-    return savedProduct;
 }
 
-@Override
-public Product updateProduct(int productId, Product product) throws ProductException {
-    log.debug("Updating product with ID: " + productId);
-    
-    Product existingProduct = productRepo.findById(productId)
-            .orElseThrow(() -> new ProductException("Product not found!"));
 
-    existingProduct.setCategory(existingProduct.getCategory());
-    Product updatedProduct = productRepo.save(product);
-    
-    log.info("Product updated successfully");
-    
-    return updatedProduct;
+
+
+@Override
+public Product cancelProduct(Integer productId) throws NoRecordsFoundException {
+	Optional<Product> op = productRepo.findById(productId);
+	if(op.isPresent()) {
+		productRepo.deleteById(productId);
+		return op.get();
+	}
+	else {
+		throw new NoRecordsFoundException("No Product available with productId: "+ productId);
+	}
 }
 
 
 @Override
-public String cancelProduct(Integer productId) throws ProductException {
-    Product product = productRepo.findById(productId)
-            .orElseThrow(() -> new ProductException("Product not found!"));
-
-    log.debug("Calling delete method from ProductJpa Repository");
-    productRepo.delete(product);
-    log.info("Product deleted successfully");
-    
-    return "Product deleted successfully.";
-}
-
-@Override
-public List<Product> showAllProduct() throws ProductException {
+public List<Product> showAllProduct() throws NoRecordsFoundException {
     List<Product> products = productRepo.findAll();
     
     if (products.isEmpty()) {
-        throw new ProductException("No products found!");
+        throw new NoRecordsFoundException("No products found!");
     }
     
     return products;
@@ -89,17 +72,20 @@ public List<Product> showAllProduct() throws ProductException {
 
 
 
-@Override
-public Product showProductById(Integer productId) throws ProductException {
-    log.debug("Calling findbyId method from ProductJpa Repository");
-    Product product = productRepo.findById(productId)
-            .orElseThrow(() -> new ProductException("Product not found!"));
 
-    log.info("Product found");
-    return product;
+public List<Product> showAllProduct(Integer productId) throws NoRecordsFoundException {
+	Optional<Product> op = productRepo.findById(productId);
+	if(op.isPresent()) {
+		List<Product> list = null;
+		 list.add(op.get());
+		 return list;
+	}
+	else {
+		throw new NoRecordsFoundException("No Product availabe with productId: "+ productId);
+	}
+	
+
 }
-
-
 
 
 

@@ -37,5 +37,32 @@ public class User {
 	@NotEmpty(message = "Role should not be null & may be User / Admin")
 	private String role;
 
+	public Integer getUserId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getFirstName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setFirstName(Object firstName) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Object getEmail() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+	public void setEmail(Object email) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }
