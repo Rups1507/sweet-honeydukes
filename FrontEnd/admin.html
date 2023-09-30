@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweetopia Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style> 
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+}
+.container{
+    display: flex;
+}
+#options{
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 15%;
+    padding: 0px 10px;
+}
+.admin-operation{
+    color: white;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 0px;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: 0.5s;
+}
+.admin-operation:hover{
+    background-color: rgba(104, 104, 104,0.5);
+}
+#display{
+    width :calc(100% - 15%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#operations {
+    width: 90%;
+    height: 90%;
+    max-height: calc(100vh - 40px);
+    border: 2px solid black;
+    overflow: hidden;
+    
+  }
+
+#operation-text{
+    background-color: black;
+    color:white ;
+    text-align: center;
+    padding:20px 0px;
+}
+#operation-text{
+    text-transform: uppercase;
+}
+
+#content{
+    width: 100%;
+    border: 1px solid black;
+    height:100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#box {
+    max-height: calc(100% - 70px);
+    overflow-y: auto;
+  }
+.productImage,.categoryImage{
+    padding: 10px;
+    font-size: 15px;
+    width: 100px;
+    height: 100%;
+}
+.productName,.categoryName,.orderDate{
+    padding: 10px;
+    font-size: 15px;
+    width: 150px;
+}
+.productprice,.productAvail{
+    padding: 10px;
+    font-size: 15px;
+    width: 80px;
+}
+.fa-pen-to-square{
+    cursor: pointer;
+}
+.fa-trash,.fa-check{
+    cursor: pointer;
+}
+#seldiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#cat-sel{
+    padding: 10px;
+
+}
+#productForm{
+position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+width: 300px;
+height:300px;
+background-color: black;
+text-align: center;
+color: white;
+padding: 20px 10px;
+}
+#productFormac{
+    height: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: space-around;
+}
+#productForm>form>input{
+    font-size: 15px;
+    padding: 5px;
+    background-color: white;
+    width: 100%;
+}
+#FormHead{
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    
+}
+.none{
+    display: none;
+}
+#addproductbutton{
+    background-color: black;
+    position: absolute;
+    bottom: 3px;
+    right: 50px;
+    padding: 10px 15px;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+}
+i{
+    cursor: pointer;
+    font-style: normal;
+}
+
+</style>
+<body>
+    <div class="container">
+        <div id="options">
+            <div class="admin-operation products">products</div>
+            <div class="admin-operation Categories">Categories</div>
+            <div class="admin-operation Orders">Orders</div>
+            <div class="admin-operation logout">logout</div>
+        </div>
+        <div id="display">
+            <div id="operations">
+                <h1 id="operation-text">Products</h1>
+                <div id="box">
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div id="productForm" class="none">
+            <div id="FormHead"><i id="formheadText">Add Product</i> <i class="fa-solid fa-xmark" id="productCancel"></i></div>
+            <form id="productFormac">
+                <input type="text" placeholder="product name">
+                <input type="text" placeholder="image url">
+                <input type="number" placeholder="price">
+                <input type="number" placeholder="availability">
+                <input type="submit" value="Add product">
+            </form>
+    </div>
+    
+    
+</body>
+<script src="admin.js"></script>
+</html>
