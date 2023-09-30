@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.masai.exception.NoRecordsFoundException;
 import com.masai.model.Cart;
 import com.masai.repository.CartRepo;
 
+@Service
 public class CartServiceImpl implements CartService {
 	
 	@Autowired
