@@ -294,7 +294,7 @@ padding: auto;
     align-items: center; /* Vertical centering */
  height: 100vh; 
   background-color: pink;
-  padding: 100px 100px 100px 100px;
+  /* padding: 100px 100px 100px 100px; */
 }
 
 .slider img {
