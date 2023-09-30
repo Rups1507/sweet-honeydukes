@@ -277,13 +277,145 @@ top: 10px;
 /* slider************************************************** */
 .slider{
     align-content: center;
+   
 }
 .slider img{
+padding: auto;
     align-content: center;
     margin: auto;
-    width: 90%;
-   height: auto;
+    width: 75%;
+   height: 400px;
 }
+
+
+.slider {
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+ height: 100vh; 
+  background-color: pink;
+  padding: 100px 100px 100px 100px;
+}
+
+.slider img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 90%;
+    height: auto;
+}
+
+
+.slider {
+    position: relative;
+    text-align: center; /* Horizontal centering */
+}
+
+.slider img {
+    max-width: 100%;
+    height: auto;
+}
+
+.centered-text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+    /* background-color: rgba(192, 114, 114, 0.7); */
+    /* color: white; */
+    padding: 10px;
+    font-size: 80px;
+    color:rgb(255, 6, 6);
+    /* font-family: Apple Chancery, cursive; */
+   
+    font-family:fantasy,cursive;
+     font-weight: bold;
+     border: 1px black;
+     /* font-size: 18px; */
+     /* color: #333; */
+     transition: all 0.3s ease; /* Add a smooth transition effect */
+
+}
+/* Menu cards of sweets  */
+
+
+
+.grand-div{
+    padding: 0px 0px;
+    width: 100%;
+}
+.grand-div h1{
+    text-align: center;
+    margin: 30px 0px;
+}
+
+.grand-div > .grand-div-child{
+    width: 95%;
+    height: auto;
+    /* margin-left: auto; */
+    gap: 15px 15px;
+    margin-right: 0px;
+    display: flex;
+    padding-left: 4%;
+}
+div#men-div.grand-div-child{
+    margin: 0px;
+    padding: 0px;
+}
+
+.grand-div-child > .card{
+    width: 25%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.card .img_div {
+    width: 100%;
+    height: auto;
+}
+.card .img_div > img{
+    width: 100%;
+    height: 350px;
+}
+.card .img_div > img:hover{
+    cursor: pointer;
+}
+.card > .desc{
+    padding: 20px;
+    /* border: 2px solid red; */
+}
+.card > .desc > h2,.card > .desc > .star-div{
+    margin: 5px 0px;
+}
+.card > .desc > h2{
+    font-size: 18px;
+}
+.desc > .star-div i{
+    color: #F57C00;
+}
+.desc .button-div{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+.card .button-div {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    /* border: 2px solid green; */
+}
+.card .button-div button{
+    background-color: #232F3E;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+
+}
+
+
+
+
+
+
 
 /* ***************************** footer footer *********************** */
 footer{
@@ -522,6 +654,86 @@ footer{
                     background-color: teal;
                 } 
                 
+/* new nav qyurrwes */
+/* new nav qyurrwes */
+/* new nav qyurrwes */
+
+
+
+/* Default styles for larger screens */
+
+/* Media query for medium-sized screens */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide the navigation links */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 60px; /* Adjust the top position as needed */
+        left: 0;
+        background-color: #333; /* Background color for the mobile menu */
+        width: 100%; /* Full width */
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show the links when the menu is active */
+    }
+
+    .desktop-item, .mobile-item {
+        display: block; /* Display menu items as blocks */
+        padding: 10px;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    /* Add styles for the mobile menu icon/button */
+    .menu-btn {
+        display: block; /* Show the menu button */
+    }
+
+    .close-btn {
+        display: none; /* Hide the close button by default */
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        color: #fff;
+        font-size: 20px;
+    }
+
+    /* Show the close button when the menu is active */
+    .nav-links.active + .close-btn {
+        display: block;
+    }
+}
+
+/* Media query for small screens */
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 0; /* Reduce padding for small screens */
+    }
+
+    /* Adjust the top position of the mobile menu */
+    .nav-links {
+        top: 50px; /* Adjust the top position as needed */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     /* **************************** bottom bottom ************ */
                     #bottom-nav {
                         display: block;
@@ -629,5 +841,26 @@ footer{
                         padding: 5px;
                     }
                 
+                }
+                @media (max-width: 768px) {
+                    .slider {
+                        height: 70vh;
+                    }
+                }
+                
+                @media (max-width: 480px) {
+                    .slider {
+                        height: 50vh;
+                    }
+                }
+                @media (max-width: 768px) {
+                    .centered-text {
+                        font-size: 14px;
+                    }
+                }
+                @media (max-width: 768px) {
+                    .centered-text {
+                        font-size: 14px;
+                    }
                 }
                 
