@@ -39,5 +39,10 @@ public class Cart {
 	
 	private Integer productCount=this.products.size();
 	private Double total;
+	public void setGrandTotal(double d) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

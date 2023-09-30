@@ -1,110 +1,86 @@
 package com.masai.service;
 
+//import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.masai.exception.NoRecordsFoundException;
+import com.masai.model.Cart;
 import com.masai.model.Customer;
+import com.masai.model.Product;
+import com.masai.repository.CartRepo;
+import com.masai.repository.CustomerRepo;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @Service
+@Slf4j
 public class CustomerServiceImpl implements CustomerService {
-
+	
 	@Autowired
 	private CustomerRepo customerRepo;
+
+	@Override
+	public Customer addCustomer(Customer customer) throws NoRecordsFoundException {
+		customerRepo.save(customer);
+		return customer;
+	}
+
+	@Override
+	public Customer updateCustomer(Customer customer) throws NoRecordsFoundException {
+		Optional<Customer> op = customerRepo.findById(customer.getCustomerid());
+		if(op.isPresent()) {
+			customerRepo.save(op.get());
+			return customer;
+		}
+		else {
+			throw new NoRecordsFoundException("No Customer available with customerId: "+customer.getCustomerid());
+		}
+	}
+
+	@Override
+	public Customer cancelCustomer(Integer customerId) throws NoRecordsFoundException {
+		Optional<Customer> op = customerRepo.findById(customerId);
+		if(op.isPresent()) {
+			customerRepo.deleteById(customerId);
+			return op.get();
+		}
+		else {
+			throw new NoRecordsFoundException("No Customer available with customerId: "+ customerId);
+		}
+	}
+
+	@Override
+	public List<Customer> showAllCustomer() throws NoRecordsFoundException {
+		 List<Customer> customers = customerRepo.findAll();
+		    
+		    if (customers.isEmpty()) {
+		        throw new NoRecordsFoundException("No customers found!");
+		    }
+		    
+		    return customers;
+	}
+
+	@Override
+	public List<Customer> showAllCustomer(Integer customerId) throws NoRecordsFoundException {
+		Optional<Customer> op = customerRepo.findById(customerId);
+		if(op.isPresent()) {
+			List<Customer> list = null;
+			 list.add(op.get());
+			 return list;
+		}
+		else {
+			throw new NoRecordsFoundException("No Customer availabe with customerId: "+ customerId);
+		}
+	}
 	
-	@Autowired
-	private CartRepo cartrepo;
+
+
 	
-
-@Override
-public Customer addCustomer(Customer customer) throws CustomerException {
-    if (customerRepo.existsByCustomerEmail(customer.getCustomerEmail())) {
-        throw new CustomerException("Email id already used");
-    }
-    log.debug("Calling save method from CustomerJpa Repository");
-
-    customer.setRole("USER");
-
-    Cart cart = new Cart();
-    cart.setGrandTotal(0.0);
-    cart.setProductCount(0);
-    cart.setTotal(0.0);
-
-    cartrepo.save(cart);
-
-    customer.setCart(cart);
-    Customer savedCustomer = customerRepo.save(customer);
-
-    log.info("Customer saved successfully");
-
-    return savedCustomer;
-}
-
-@Override
-public Customer updateCustomer(Customer customer, Integer customerId) throws CustomerException {
-    log.debug("Calling findById method from CustomerJpa Repository");
-    Optional<Customer> opt = customerRepo.findById(customerId);
-
-    if (opt.isPresent()) {
-        Customer existingCustomer = opt.get();
-        existingCustomer.setCustomerName(customer.getCustomerName());
-        existingCustomer.setSweetOrders(customer.getSweetOrders());
-        existingCustomer.setCart(customer.getCart());
-
-        log.info("Customer name, its orders, and its cart updated successfully");
-        return existingCustomer;
-    } else {
-        throw new CustomerException("User with this customerId is not present");
-    }
-}
-
-
-@Override
-public Customer cancelCustomer(Integer customerId) throws CustomerException {
-    log.debug("Calling findById method from CustomerJpa Repository");
-
-    Customer customer = customerRepo.findById(customerId)
-            .orElseThrow(() -> new CustomerException("No customer found with this ID"));
-
-    customerRepo.delete(customer);
-
-    log.info("Customer deleted successfully");
-
-    return customer;
-}
-
-
-@Override
-public List<Customer> showAllCustomers() throws CustomerException {
-    log.debug("Calling findAll method from CustomerJpa Repository");
-    List<Customer> customers = customerRepo.findAll();
-
-    if (customers.isEmpty()) {
-        log.warn("No customers found in the database.");
-        throw new CustomerException("No customer present in the database");
-    } else {
-        log.info("All customers retrieved successfully.");
-        return customers;
-    }
-}
-
-
-@Override
-public Customer showCustomerById(Integer userId) throws CustomerException {
-    log.debug("Calling findById method from CustomerJpa Repository");
-    
-    Customer customer = customerRepo.findById(userId)
-            .orElseThrow(() -> new CustomerException("Customer does not exist"));
-    
-    log.info("Customer retrieved successfully");
-    
-    return customer;
-}
-
-
+	
 
 }
