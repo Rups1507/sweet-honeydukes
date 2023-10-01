@@ -31,7 +31,6 @@ public class OrderBill {
     @NotNull(message = "Date should be there")
     private LocalDate orderBill;
     
-    @NotNull(message = "Total should not be null")
     private Double totalCost;
 
     @JsonIgnore
@@ -50,4 +49,9 @@ public class OrderBill {
                 ", totalCost=" + totalCost +
                 '}';
     }
+
+	public Integer getOrderBillId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
