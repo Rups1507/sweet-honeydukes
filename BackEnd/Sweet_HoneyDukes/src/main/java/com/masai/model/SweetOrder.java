@@ -72,4 +72,9 @@ public class SweetOrder {
                 ", date=" + date +
                 '}';
     }
+
+	public Integer getSweetOrderId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

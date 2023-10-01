@@ -43,6 +43,10 @@ public class Cart {
 		// TODO Auto-generated method stub
 		
 	}
+	public Integer getCartId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
 }

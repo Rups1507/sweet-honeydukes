@@ -35,6 +35,11 @@ public class SweetItem {
     @OneToOne
     private Product product;
 
+	public Integer getOrderItemId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 
    

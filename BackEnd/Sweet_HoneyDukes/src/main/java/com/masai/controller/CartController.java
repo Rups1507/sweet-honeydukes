@@ -16,11 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.masai.exception.NoRecordsFoundException;
 import com.masai.model.Cart;
-import com.masai.model.Product;
 import com.masai.service.CartService;
 
 @RestController
-@RequestMapping("cart")
+@RequestMapping("/cart")
 public class CartController {
 
 	

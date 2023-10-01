@@ -15,10 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.masai.exception.NoRecordsFoundException;
 import com.masai.model.OrderBill;
-import com.masai.model.Product;
 import com.masai.service.OrderBillService;
-
-import jakarta.persistence.criteria.Order;
 
 @RestController
 @RequestMapping("/orderbill")
