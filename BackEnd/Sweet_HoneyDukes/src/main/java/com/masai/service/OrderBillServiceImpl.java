@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.masai.exception.NoRecordsFoundException;
 import com.masai.model.OrderBill;
+import com.masai.model.Product;
 import com.masai.repository.OrderBillRepo;
 
 @Service
@@ -52,14 +53,14 @@ public class OrderBillServiceImpl implements OrderBillService {
 	}
 
 	@Override
-	public List<OrderBill> showAllOrderBill(Integer orderBillId) throws NoRecordsFoundException {
-		Optional<OrderBill> op = orderBillRepo.findById(orderBillId);
-		if(op.isPresent()) {
-			List<OrderBill> list = null;
-			list.add(op.get());
-			return list;
+	public OrderBill showAllOrderBill(Integer orderBillId) throws NoRecordsFoundException {
+		Optional<OrderBill> opt = orderBillRepo.findById(orderBillId);
+		if(opt.isPresent()) {
+			return opt.get();
+		} else {
+			throw new NoRecordsFoundException("OrderBill not found!");
 		}
-		throw new NoRecordsFoundException("No Order Bill found with orderBillId: " + orderBillId);
-	}
 
+}
+	
 }

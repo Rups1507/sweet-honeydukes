@@ -10,6 +10,6 @@ public interface OrderBillService {
 	public OrderBill updateOrderBill(OrderBill orderBill) throws NoRecordsFoundException;
 	public OrderBill cancelOrderBill(Integer orderBillId) throws NoRecordsFoundException;
 	public List<OrderBill> showAllOrderBill() throws NoRecordsFoundException;
-	public List<OrderBill> showAllOrderBill(Integer orderBillId) throws NoRecordsFoundException;
+	public OrderBill showAllOrderBill(Integer orderBillId) throws NoRecordsFoundException;
 	
 }

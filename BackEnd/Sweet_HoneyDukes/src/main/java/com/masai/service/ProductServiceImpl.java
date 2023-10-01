@@ -73,15 +73,13 @@ public List<Product> showAllProduct() throws NoRecordsFoundException {
 
 
 
-public List<Product> showAllProduct(Integer productId) throws NoRecordsFoundException {
-	Optional<Product> op = productRepo.findById(productId);
-	if(op.isPresent()) {
-		List<Product> list = null;
-		 list.add(op.get());
-		 return list;
-	}
-	else {
-		throw new NoRecordsFoundException("No Product availabe with productId: "+ productId);
+public Product showAllProduct(Integer productId) throws NoRecordsFoundException  {
+
+	Optional<Product> opt = productRepo.findById(productId);
+	if(opt.isPresent()) {
+		return opt.get();
+	} else {
+		throw new NoRecordsFoundException("Product not found!");
 	}
 	
 
