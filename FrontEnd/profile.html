@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Honeyducks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Header styles */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Form styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="tel"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        /* Button styles */
+        .btn {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* User Info styles */
+        .userInfo {
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+        }
+
+        .userInfo img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        /* Footer styles */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Navigation Bar styles */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .navbar li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        /* Logo styles */
+        .nav-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .logoimg{
+                    width: 100%;
+                    height:auto
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <span class="nav-logo">Honeyducks</span>
+                <img class="logoimg" src="AssetsIndexPage/Shop.png" alt="Honeyducks Logo">
+            </div>
+            <!-- <h1>My Account</h1> -->
+        </div>
+
+        <!-- Form for user details -->
+        <form class="userForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Your Name">
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" placeholder="Your Mobile Number">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Your Email">
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" placeholder="Your Address"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="image">Profile Image:</label>
+                <input type="file" id="image">
+            </div>
+
+            <button type="button" class="btn" id="saveButton">Save</button>
+        </form>
+
+        <!-- User information will be displayed here -->
+        <div class="userInfo" id="userInfo"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    
+
+    <!-- Footer -->
+    <div class="footer">
+        <button class="btn" onclick="redirectToHome()">Back to Home</button>
+    </div>
+
+    <script>
+        // Function to save user data in localStorage
+        function saveUserData() {
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            const image = document.getElementById('image').value; // Note: File upload doesn't store the image itself in localStorage.
+
+            const userData = {
+                name,
+                mobile,
+                email,
+                address,
+                image,
+            };
+
+            localStorage.setItem('userData', JSON.stringify(userData));
+            displayUserData();
+        }
+
+        // Function to display user data from localStorage
+        function displayUserData() {
+            const userData = JSON.parse(localStorage.getItem('userData'));
+            if (userData) {
+                const userInfo = document.getElementById('userInfo');
+                userInfo.innerHTML = `
+                    <h2>User Information:</h2>
+                    <p>Name: ${userData.name}</p>
+                    <p>Mobile Number: ${userData.mobile}</p>
+                    <p>Email: ${userData.email}</p>
+                    <p>Address: ${userData.address}</p>
+                    <img src="${userData.image}" alt="Profile Image">
+                `;
+            }
+        }
+
+        // Add a click event listener to the save button
+        document.getElementById('saveButton').addEventListener('click', saveUserData);
+
+        // Display user data if available
+        displayUserData();
+
+        // Function to redirect to the home page (index.html)
+        function redirectToHome() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
