@@ -10,8 +10,6 @@ import com.masai.model.Product;
 public interface CustomerRepo extends JpaRepository<Customer, Integer> {
 
 	
-	boolean existsByCustomerEmail(Object customerEmail);
 
-	Optional<Customer> findByCustomerEmail(Object customerEmail);
 
 }
