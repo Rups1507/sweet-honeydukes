@@ -1,6 +1,6 @@
 package com.masai.exception;
 
-public class NoRecordsFoundException extends Exception {
+public class NoRecordsFoundException extends RuntimeException {
 
 	public NoRecordsFoundException(String message) {
 		super(message);
