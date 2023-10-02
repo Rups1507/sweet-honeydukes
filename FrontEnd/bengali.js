@@ -243,6 +243,30 @@ function renderingdata(data) {
     mainbody.append(div);
   });
 
+    let addtocartbtn = document.createElement("button")
+    
+    addtocartbtn.innerHTML = "Add To Cart";
 
+    addtocartbtn.addEventListener("click",()=>{
+      alert("Product added to cart !!!")
+        addtocartarr.push(element.id)
+        console.log(addtocartarr)
+        localStorage.setItem("addtocart",JSON.stringify(addtocartarr))
+        countspan.innerHTML = addtocartarr.length
+    })
 
-}
+    let buytbtn = document.createElement("button")
+    buytbtn.innerHTML = "Buy"
+    
+    buytbtn.addEventListener("click",()=>{
+      window.location.href = "paymentpage.html";
+    })
+    buttondiv.append(addtocartbtn,buytbtn);
+    div3.append(Name, Category,brand, Price,product_badge)
+    div3.append(buttondiv);
+    div2.append(img)
+    div.append(div2,div3)
+    mainbody.append(div)
+    })
+  }
+
