@@ -48,7 +48,7 @@ let kidsArray=[];
 let bagsArray=[];
 
 
-
+let cart =[];
 
 let viewcart = JSON.parse(localStorage.getItem("veiwproduct")) || []
 
@@ -142,11 +142,15 @@ function renderingdata1(data){
       addtocartbtn.innerHTML = "Add To Cart";
 
       addtocartbtn.addEventListener("click",()=>{
-          addtocartarr.push(element.id)
-          let added = new Set(addtocartarr)
-          console.log(addtocartarr)
-          localStorage.setItem("addtocart",JSON.stringify(added))
-          countspan.innerHTML = addtocartarr.length
+        //   addtocartarr.push(element.id)
+        //   let added = new Set(addtocartarr)
+        //   console.log(addtocartarr)
+          cart.push(element);
+          localStorage.setItem("addtocart",JSON.stringify(cart));
+          console.log(cart)
+
+        //   localStorage.setItem("addtocart",JSON.stringify(added))
+        //   countspan.innerHTML = addtocartarr.length
       })
 
       let buytbtn = document.createElement("button")
@@ -229,10 +233,13 @@ function renderingdata(data){
       addtocartbtn.innerHTML = "Add To Cart";
 
       addtocartbtn.addEventListener("click",()=>{
-          addtocartarr.push(element.id)
-          console.log(addtocartarr)
-          localStorage.setItem("addtocart",JSON.stringify(addtocartarr))
-          countspan.innerHTML = addtocartarr.length
+        //   addtocartarr.push(element.id)
+        //   console.log(addtocartarr)
+        //   localStorage.setItem("addtocart",JSON.stringify(addtocartarr))
+        //   countspan.innerHTML = addtocartarr.length
+        cart.push(element);
+        localStorage.setItem("addtocart",JSON.stringify(cart));
+        console.log(cart)
       })
 
       let buytbtn = document.createElement("button")
@@ -315,10 +322,13 @@ function renderingdata2(data){
       addtocartbtn.innerHTML = "Add To Cart";
 
       addtocartbtn.addEventListener("click",()=>{
-          addtocartarr.push(element.id)
-          console.log(addtocartarr)
-          localStorage.setItem("addtocart",JSON.stringify(addtocartarr))
-          countspan.innerHTML = addtocartarr.length
+        //   addtocartarr.push(element.id)
+        //   console.log(addtocartarr)
+        //   localStorage.setItem("addtocart",JSON.stringify(addtocartarr))
+        //   countspan.innerHTML = addtocartarr.length
+        cart.push(element);
+        localStorage.setItem("addtocart",JSON.stringify(cart));
+        console.log(cart)
       })
 
       let buytbtn = document.createElement("button")
@@ -399,10 +409,13 @@ function renderingdata3(data){
       addtocartbtn.innerHTML = "Add To Cart";
 
       addtocartbtn.addEventListener("click",()=>{
-          addtocartarr.push(element.id)
-          console.log(addtocartarr)
-          localStorage.setItem("addtocart",JSON.stringify(addtocartarr))
-          countspan.innerHTML = addtocartarr.length
+        //   addtocartarr.push(element.id)
+        //   console.log(addtocartarr)
+        //   localStorage.setItem("addtocart",JSON.stringify(addtocartarr))
+        //   countspan.innerHTML = addtocartarr.length
+        cart.push(element);
+        localStorage.setItem("addtocart",JSON.stringify(cart));
+        console.log(cart)
       })
 
       let buytbtn = document.createElement("button")
@@ -485,10 +498,14 @@ function renderingdata4(data){
       addtocartbtn.innerHTML = "Add To Cart";
 
       addtocartbtn.addEventListener("click",()=>{
-          addtocartarr.push(element.id)
-          console.log(addtocartarr)
-          localStorage.setItem("addtocart",JSON.stringify(addtocartarr))
-          countspan.innerHTML = addtocartarr.length
+        //   addtocartarr.push(element.id)
+        //   console.log(addtocartarr)
+        //   localStorage.setItem("addtocart",JSON.stringify(addtocartarr))
+        //   countspan.innerHTML = addtocartarr.length
+
+        cart.push(element);
+        localStorage.setItem("addtocart",JSON.stringify(cart));
+        console.log(cart)
       })
 
       let buytbtn = document.createElement("button")
@@ -574,10 +591,13 @@ function renderingdata5(data){
       addtocartbtn.innerHTML = "Add To Cart";
 
       addtocartbtn.addEventListener("click",()=>{
-          addtocartarr.push(element.id)
-          console.log(addtocartarr)
-          localStorage.setItem("addtocart",JSON.stringify(addtocartarr))
-          countspan.innerHTML = addtocartarr.length
+        //   addtocartarr.push(element.id)
+        //   console.log(addtocartarr)
+        //   localStorage.setItem("addtocart",JSON.stringify(addtocartarr))
+        //   countspan.innerHTML = addtocartarr.length
+        cart.push(element);
+        localStorage.setItem("addtocart",JSON.stringify(cart));
+        console.log(cart)
       })
 
       let buytbtn = document.createElement("button")

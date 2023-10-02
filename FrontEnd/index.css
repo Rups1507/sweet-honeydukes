@@ -159,8 +159,8 @@ top: 10px;
     /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
     display: flex;
     margin-inline: auto;
-    justify-content: space-between;
-
+    justify-content:space-between;
+    
 }
 #bottom-nav>div:nth-child(2){
     display: none;
@@ -293,9 +293,13 @@ padding: auto;
     display: flex;
     justify-content: center; /* Horizontal centering */
     align-items: center; /* Vertical centering */
- height: 100vh; 
+ /* height: 100vh;  */
   background-color: pink;
   /* padding: 100px 100px 100px 100px; */
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+
 }
 
 .slider img {
@@ -335,7 +339,7 @@ padding: auto;
      /* color: #333; */
      transition: all 0.3s ease; /* Add a smooth transition effect */
      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-
+display: none;
 }
 /* Menu cards of sweets  */
 
