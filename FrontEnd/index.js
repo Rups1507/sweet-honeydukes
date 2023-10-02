@@ -79,7 +79,7 @@ window.addEventListener("load",(e)=>{
     getdata()
 })
 countspan.innerHTML = addtocartarr.length
-// *************************************** women******************
+// *************************************** raj******************
 
 function womendata(data){
     let filteredData=data.filter((element) => {
@@ -163,7 +163,7 @@ function renderingdata1(data){
   }
 
 
-// *************************************** men******************
+// *************************************** indian******************
 
 function mendata(data){
     let filteredData=data.filter((element) => {
@@ -248,7 +248,7 @@ function renderingdata(data){
       })
   }
 
-// *************************************** women******************
+// *************************************** candys******************
 
 function bagsdata(data){
     let filteredData=data.filter((element) => {
@@ -333,7 +333,7 @@ function renderingdata2(data){
       bagsdec.append(div)
       })
   }
-// *************************************** home decore ******************
+// *************************************** cakes******************
 function mydata(data){
     let filteredData=data.filter((element) => {
         if(element.category=="homedecore"){
