@@ -35,7 +35,7 @@ function carddata(){
     alert1.style.display = "block"
     setTimeout(()=>{
         alert1.style.display = "none"
-        window.location.assign("pay.html")
+        window.location.assign("addressdetails.html")
     },1000)
     
 }
