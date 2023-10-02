@@ -5,7 +5,36 @@ let Data_For_AddToCart = JSON.parse(localStorage.getItem("addtocart"));
 if (Data_For_AddToCart == null) {
   Data_For_AddToCart = [];
 }
+images =[
+  "AssetsIndexPage/Bengali-sweets2.png",
+  "AssetsIndexPage/dessert.jpg",
+  "AssetsIndexPage/dessert2.jpg",
+  "AssetsIndexPage/dessert.jpg",
+  "AssetsIndexPage/cake.png",
+  "AssetsIndexPage/rajsweet.png",
+ 
+ 
+  "AssetsIndexPage/Bengali-sweets2.png",
+  "AssetsIndexPage/dessert.jpg",
+  "AssetsIndexPage/dessert2.jpg",
+  "AssetsIndexPage/dessert.jpg",
+  "AssetsIndexPage/cake.png",
+  "AssetsIndexPage/rajsweet.png",
+ 
+ 
+  "AssetsIndexPage/Bengali-sweets2.png",
+  "AssetsIndexPage/dessert.jpg",
+  "AssetsIndexPage/dessert2.jpg",
+  "AssetsIndexPage/dessert.jpg",
+  "AssetsIndexPage/cake.png",
+  "AssetsIndexPage/rajsweet.png"
+ 
+ 
+   ]
 
+
+
+let cart=[];
 window.addEventListener("load", () => {
   fetchRender();
 });
@@ -17,6 +46,7 @@ async function fetchRender() {
 }
 
 // for deisplay data
+
 function excute(responseNumber, fetchData) {
   let filtered = fetchData.filter((ele) => {
     return ele.id == responseNumber;
@@ -27,7 +57,7 @@ function excute(responseNumber, fetchData) {
   details.innerHTML = "";
 
   let imag = document.createElement("img");
-  imag.setAttribute("src", data.src);
+  imag.setAttribute("src", images[0]);
   imag.className = "product-image";
   image.append(imag);
 
@@ -74,6 +104,7 @@ function excute(responseNumber, fetchData) {
   buy_now.textContent = "Buy Now";
 
   addToCardButton.addEventListener("click", () => {
+   
     addToCardButton.textContent = addToCartHere(data);
   }); // for add to card
 
@@ -100,8 +131,10 @@ function excute(responseNumber, fetchData) {
 function addToCartHere(element) {
   let product_id = element.id;
   Data_For_AddToCart.push(product_id);
-  
-  localStorage.setItem("addtocart", JSON.stringify(Data_For_AddToCart));
+  cart.push(element);
+localStorage.setItem("addtocart",JSON.stringify(cart));
+console.log(cart)
+  // localStorage.setItem("addtocart", JSON.stringify(Data_For_AddToCart));
 
   return "Added to Cart";
 }
