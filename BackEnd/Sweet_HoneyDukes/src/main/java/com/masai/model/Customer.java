@@ -57,30 +57,30 @@ public class Customer extends User{
 				+ "]";
 	}
 
-	public Object getCustomerEmail() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public void setCustomerId(Integer userId) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void setRole(String string) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void setCart(Cart cart2) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public Integer getCustomerid() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	public Object getCustomerEmail() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	public void setCustomerId(Integer userId) {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	public void setRole(String string) {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	public void setCart(Cart cart2) {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	public Integer getCustomerid() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 
 

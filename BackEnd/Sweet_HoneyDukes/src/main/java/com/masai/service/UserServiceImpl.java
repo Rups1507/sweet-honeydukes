@@ -37,19 +37,19 @@ public User addUser(User user) throws NoRecordsFoundException {
 
 
 
-@Override
-public User updateUser(User user) throws NoRecordsFoundException{
-    Optional<User> optionalUser = userRepo.findById(user.getUserId());
-    if (optionalUser.isPresent()) {
-        User existingUser = optionalUser.get();
-        existingUser.setFirstName(user.getFirstName());
-        existingUser.setFirstName(user.getFirstName());
-        existingUser.setEmail(user.getEmail());
-        return userRepo.save(existingUser);
-    } else {
-        throw new NoRecordsFoundException("User not found");
-    }
-}
+//@Override
+//public User updateUser(User user) throws NoRecordsFoundException{
+//    Optional<User> optionalUser = userRepo.findById(user.getUserId());
+//    if (optionalUser.isPresent()) {
+//        User existingUser = optionalUser.get();
+//        existingUser.setFirstName(user.getFirstName());
+//        existingUser.setFirstName(user.getFirstName());
+//        existingUser.setEmail(user.getEmail());
+//        return userRepo.save(existingUser);
+//    } else {
+//        throw new NoRecordsFoundException("User not found");
+//    }
+//}
 
 
 	@Override
@@ -73,6 +73,14 @@ public List<User> showAllUser()throws NoRecordsFoundException {
         throw new NoRecordsFoundException("User Not Found");
     }
 }
+
+
+
+	@Override
+	public User updateUser(User user) throws NoRecordsFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
 	

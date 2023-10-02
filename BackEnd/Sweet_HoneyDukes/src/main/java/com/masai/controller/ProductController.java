@@ -29,7 +29,7 @@ public class ProductController {
 	
 	
 	@PostMapping("/add")
-	public ResponseEntity<Product> addProductHandler(@Valid @RequestBody Product product,@PathVariable Integer Categoryid) throws NoRecordsFoundException {
+	public ResponseEntity<Product> addProductHandler(@Valid @RequestBody Product product) throws NoRecordsFoundException {
 		
 		Product savedProduct = productService.addProduct(product);
 		

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,7 +36,7 @@ public class CustomerController {
     }
 
 	
-	   @GetMapping("/update")
+	   @PutMapping("/update")
 	    public ResponseEntity<Customer> updateCustomer(@RequestBody Customer customer) throws CustomerException{
 	        return new ResponseEntity<>(customerService.updateCustomer(customer),HttpStatus.OK);
 
@@ -48,14 +49,14 @@ public class CustomerController {
     }
 
 
-    @GetMapping("/customer/allcustomers")
+    @GetMapping("/allcustomers")
     public ResponseEntity<List<Customer>> showAllCustomer() throws CustomerException{
         return new ResponseEntity<>(customerService.showAllCustomer(),HttpStatus.OK);
 
     }
 
-    @GetMapping("/customer/{customerid}")
-    public ResponseEntity<Customer> showAllCustomer(@PathVariable("billid") Integer customerId) throws CustomerException {
+    @GetMapping("/{customerid}")
+    public ResponseEntity<Customer> showAllCustomer(@PathVariable("customerid") Integer customerId) throws CustomerException {
     	Customer p = customerService.showAllCustomer(customerId);
 		
 		return new ResponseEntity<>(p, HttpStatus.OK);

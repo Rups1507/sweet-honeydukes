@@ -14,8 +14,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-
-
 public class SweetItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +23,7 @@ public class SweetItem {
     private Double price;
     private String description;
     private Boolean available = true;
-
+    
     @ManyToOne
     private Category category;
 
@@ -35,11 +33,7 @@ public class SweetItem {
     @OneToOne
     private Product product;
 
-	public Integer getOrderItemId() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 
 
    
