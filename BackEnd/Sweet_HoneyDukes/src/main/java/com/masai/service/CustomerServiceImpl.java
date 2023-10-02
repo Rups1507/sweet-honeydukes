@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 
 import com.masai.exception.CustomerException;
 import com.masai.model.Customer;
+import com.masai.model.User;
 import com.masai.repository.CustomerRepo;
+import com.masai.repository.UserRepo;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,6 +23,9 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@Autowired
 	private CustomerRepo customerRepo;
+	
+	@Autowired
+	private UserRepo userRepo;
 
 	@Override
 	public Customer addCustomer(Customer customer) throws CustomerException {
@@ -30,13 +35,15 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public Customer updateCustomer(Customer customer) throws CustomerException {
-		Optional<Customer> op = customerRepo.findById(customer.getCustomerid());
+		Optional<User> u = userRepo.findById(customer.getUserId());
+		Integer id = u.get().getUserId();
+		Optional<Customer> op = customerRepo.findById(id);
 		if(op.isPresent()) {
 			customerRepo.save(op.get());
 			return customer;
 		}
 		else {
-			throw new CustomerException("No Customer available with customerId: "+customer.getCustomerid());
+			throw new CustomerException("No Customer available with customerId: "+customer.getUserId());
 		}
 	}
 

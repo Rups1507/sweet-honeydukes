@@ -50,8 +50,5 @@ public class OrderBill {
                 '}';
     }
 
-	public Integer getOrderBillId() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 }

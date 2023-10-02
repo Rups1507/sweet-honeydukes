@@ -26,8 +26,5 @@ public class Category {
 	@Size(min=3, max=20, message = "Category name should be there")
 	private String name;
 
-	public Integer getCategoryid() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 }

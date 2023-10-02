@@ -73,8 +73,5 @@ public class SweetOrder {
                 '}';
     }
 
-	public Integer getSweetOrderId() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 }
