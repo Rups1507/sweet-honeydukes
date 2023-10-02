@@ -11,17 +11,6 @@ import org.springframework.web.context.request.WebRequest;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 	
-	
-	@ExceptionHandler(ProductException.class)
-	public ResponseEntity<MyErrorDetails> productExceptionHandler(ProductException ce, WebRequest req){
-				
-		MyErrorDetails err= new MyErrorDetails();
-			err.setTimestamp(LocalDateTime.now());
-			err.setMessage(ce.getMessage());
-			err.setDetails(req.getDescription(false));
-				
-		return new ResponseEntity<MyErrorDetails>(err, HttpStatus.BAD_REQUEST);
-	}
 
 	@ExceptionHandler(NoRecordsFoundException.class)
 	public ResponseEntity<MyErrorDetails> noRecordFoundExceptionHandler(NoRecordsFoundException ce, WebRequest req){
