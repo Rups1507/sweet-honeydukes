@@ -6,7 +6,7 @@ if (Data_For_AddToCart == null) {
   Data_For_AddToCart = [];
 }
 images =[
-  "AssetsIndexPage/Bengali-sweets2.png",
+  "AssetsIndexPage/rasgullaav.jpg",
   "AssetsIndexPage/dessert.jpg",
   "AssetsIndexPage/dessert2.jpg",
   "AssetsIndexPage/dessert.jpg",
@@ -48,6 +48,7 @@ async function fetchRender() {
 // for deisplay data
 
 function excute(responseNumber, fetchData) {
+  let i=0;
   let filtered = fetchData.filter((ele) => {
     return ele.id == responseNumber;
   });
@@ -57,7 +58,8 @@ function excute(responseNumber, fetchData) {
   details.innerHTML = "";
 
   let imag = document.createElement("img");
-  imag.setAttribute("src", images[0]);
+  imag.setAttribute("src", images[i]);
+  i++;
   imag.className = "product-image";
   image.append(imag);
 

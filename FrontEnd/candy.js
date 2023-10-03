@@ -147,6 +147,43 @@ async function mensdata() {
   }
 }
 
+
+images =[
+                    "AssetsIndexPage/Bengali-sweets2.png",
+                    "AssetsIndexPage/dessert.jpg",
+                    "AssetsIndexPage/dessert2.jpg",
+                    "AssetsIndexPage/dessert.jpg",
+                    "AssetsIndexPage/cake.png",
+                    "AssetsIndexPage/rajsweet.png",
+                   
+                   
+                    "AssetsIndexPage/Bengali-sweets2.png",
+                    "AssetsIndexPage/dessert.jpg",
+                    "AssetsIndexPage/dessert2.jpg",
+                    "AssetsIndexPage/dessert.jpg",
+                    "AssetsIndexPage/cake.png",
+                    "AssetsIndexPage/rajsweet.png",
+                   
+                   
+                    "AssetsIndexPage/Bengali-sweets2.png",
+                    "AssetsIndexPage/dessert.jpg",
+                    "AssetsIndexPage/dessert2.jpg",
+                    "AssetsIndexPage/dessert.jpg",
+                    "AssetsIndexPage/cake.png",
+                    "AssetsIndexPage/rajsweet.png"
+                   
+                   
+                     ]
+
+
+
+
+
+
+
+
+
+
 function renderingdata(data) {
   mainbody.innerHTML = "";
   data.forEach((element, index) => {
@@ -162,7 +199,7 @@ function renderingdata(data) {
     });
 
     let img = document.createElement("img");
-    img.setAttribute("src", element.src);
+    img.setAttribute("src", images[index]);
 
     let div3 = document.createElement("div");
     div3.classList.add("desc");
@@ -190,6 +227,7 @@ function renderingdata(data) {
     addtocartbtn.innerHTML = "Add To Cart";
 
     addtocartbtn.addEventListener("click" ,()=>{
+                    alert("Product added to the cart !");
                     cart.push(element);
                     localStorage.setItem("addtocart",JSON.stringify(cart));
                     console.log(cart)
@@ -231,4 +269,7 @@ function renderingdata(data) {
     div.append(div2, div3);
     mainbody.append(div);
   });
+
+
+
 }

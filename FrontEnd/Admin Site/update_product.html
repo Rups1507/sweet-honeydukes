@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product at Dressing</title>
+    <link rel="shortcut icon" href="https://iili.io/HN45Qd7.png" type="image/x-icon">
+    <link rel="stylesheet" href="./Styling/update_product.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+                <img src="AssetsIndexPage/Shop.png" alt="">
+            </div>
+
+            <span class="logo_name">Honeydukes</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="./admin.html">
+                        <i class="uil uil-estate"></i>
+                        <span class="link-name">Admin Page</span>
+                    </a></li>
+                <li><a href="./all_Product.html">
+                        <i class="uil uil-files-landscapes"></i>
+                        <span class="link-name">All Product</span>
+                    </a></li>
+                <li><a href="./Add_Product.html">
+                        <i class="uil uil-chart"></i>
+                        <span class="link-name">Add Product</span>
+                    </a></li>
+                <li><a href="./manage_order.html">
+                        <i class="uil uil-thumbs-up"></i>
+                        <span class="link-name">Manage Order</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="uil uil-comments"></i>
+                        <span class="link-name">Manage Payment</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="uil uil-share"></i>
+                        <span class="link-name">Check Feedback</span>
+                    </a></li>
+            </ul>
+
+            <ul class="logout-mode">
+                <li><a href="#">
+                        <i class="uil uil-signout"></i>
+                        <span class="link-name">Logout</span>
+                    </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+            <!--<img src="images/profile.jpg" alt="">-->
+        </div>
+
+        <div class="dash-content">
+            <div class="overview">
+                <div class="title">
+                    <i class="uil uil-tachometer-fast-alt"></i>
+                    <span class="text">Update Existing Product and Category</span>
+                </div>
+            </div>
+
+            <div id="product-update">
+
+                <form id="form">
+                    <label for="name">Enter Product Name</label>
+                    <input type="text" id="names" placeholder="Enter Product Name" required>
+
+                    <label for="price">Enter Product Price</label>
+                    <input type="number" placeholder="Enter Product Price" required id="price">
+
+                    <label for="name">Choose a Category</label>
+                    <input type="text" placeholder="Product Category" id="category" required>
+
+                    <label for="name">Product Quantity</label>
+                    <input type="number" placeholder="Product Quantity" required id="quantity">
+
+                    <label for="name">Brand Name</label>
+                    <input type="text" placeholder="Brand Name" id="brand" required>
+
+                    <label for="name">Product Image</label>
+                    <input type="text" placeholder="Product Image" id="image" required>
+
+                    <input type="submit" id="submit">
+
+                </form>
+            </div>
+
+
+    </section>
+
+    <div id="sure">
+        <p>Are You Sure ?</p>
+        <div>
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+        </div>
+    </div>
+
+    <div id="sure2">
+        <p>Do you really want to update?</p>
+        <div>
+            <button id="yes2">Yes</button>
+            <button id="no2">No</button>
+        </div>
+    </div>
+    <div class="alert">Please Add Product Carefully !</div>
+
+
+    <div id="ask-category">
+        <select id="product_category">
+            <option value="">Select Category</option>
+            <option value="kids">Kids Category</option>
+            <option value="gifts">All Gifts</option>
+            <option value="mens">Mens</option>
+            <option value="women">Women</option>
+            <option value="bags">Bags</option>
+            <option value="womens top">Womens top</option>
+            <option value="womens jeans">Womens jeans</option>
+            <option value="homedecore">Homedecorate Category</option>
+        </select>
+
+        <div id="product-names">
+            <!-- append name via javacsript -->
+        </div>
+    </div>
+
+    <div id="product-image-showing">
+        <p>This product tobe change</p>
+        <div id="image-append-here"></div>
+    </div>
+
+</body>
+<script src="./Script file/update_product.js"></script>
+
+</html>

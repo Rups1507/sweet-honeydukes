@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Registration Form</title>
+  <link rel="shortcut icon" href="https://iili.io/HN45Qd7.png" type="image/x-icon">
+  <link rel="stylesheet" href="./Styling/admin.registration.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <header>New Admin</header>
+    <form action="#">
+        <div class="field name">
+        <div class="input-area">
+          <input type="text" placeholder="Admin name " id="admin-name">
+          <i class="icon fas fa-envelope"></i>
+          <i class="error error-icon fas fa-exclamation-circle"></i>
+        </div>
+        <div class="error error-txt">name can't be blank</div>
+      </div>
+
+      <div class="field email">
+        <div class="input-area">
+          <input type="text" placeholder="Email Address" id="admin-email">
+          <i class="icon fas fa-envelope"></i>
+          <i class="error error-icon fas fa-exclamation-circle"></i>
+        </div>
+        <div class="error error-txt">Email can't be blank</div>
+      </div>
+
+      <div class="field password">
+        <div class="input-area">
+          <input type="password" placeholder="Password" id="admin-password">
+          <i class="icon fas fa-lock"></i>
+          <i class="error error-icon fas fa-exclamation-circle"></i>
+        </div>
+        <div class="error error-txt">Password can't be blank</div>
+      </div>
+      <input type="submit" value="Register">
+    </form>
+    <div class="sign-txt">Already a Admin? <a href="./admin.login.html">Login now</a></div>
+  </div>
+
+  <div id="passcode"><form action="">
+  <input type="password" placeholder="Enter Admin Passcode" required id="code">
+  <input type="submit">
+  </form>
+  </div>
+
+  <div class="alert">Wrong Passcode</div>
+
+  <script src="./Script file/admin.registration.js"></script>
+
+</body>
+</html>
