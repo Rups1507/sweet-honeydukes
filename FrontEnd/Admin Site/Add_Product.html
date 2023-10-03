@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product at Dressing</title>
+    <link rel="shortcut icon" href="https://iili.io/HN45Qd7.png" type="image/x-icon">
+    <link rel="stylesheet" href="./Styling/add_new_product.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+                <!-- <img src="Admin Site/Shop.png" alt="logo"> -->
+            </div>
+
+            <span class="logo_name">Honeydukes</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="./admin.html">
+                        <i class="uil uil-estate"></i>
+                        <span class="link-name">Admin Page</span>
+                    </a></li>
+                <li><a href="./all_Product.html">
+                        <i class="uil uil-files-landscapes"></i>
+                        <span class="link-name">All Product</span>
+                    </a></li>
+                <li><a href="./update_product.html">
+                        <i class="uil uil-chart"></i>
+                        <span class="link-name">Update Product</span>
+                    </a></li>
+                <li><a href="./manage_order.html">
+                        <i class="uil uil-thumbs-up"></i>
+                        <span class="link-name">Manage Order</span>
+                    </a></li>
+                <!-- <li><a href="#">
+                        <i class="uil uil-comments"></i>
+                        <span class="link-name">Manage Payment</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="uil uil-share"></i>
+                        <span class="link-name">Check Feedback</span>
+                    </a></li> -->
+            </ul>
+
+            <ul class="logout-mode">
+                <li><a href="#">
+                        <i class="uil uil-signout"></i>
+                        <span class="link-name">Logout</span>
+                    </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+            <!--<img src="images/profile.jpg" alt="">-->
+        </div>
+
+        <div class="dash-content">
+            <div class="overview">
+                <div class="title">
+                    <i class="uil uil-tachometer-fast-alt"></i>
+                    <span class="text">Add New Product and Category</span>
+                </div>
+            </div>
+            <div id="product-add">
+                <form id="form">
+                    <label for="name">Enter Product Name</label>
+                    <input type="text" placeholder="Enter Product Name" required id="name">
+                    <label for="price">Enter Product Price</label>
+                    <input type="number" placeholder="Enter Product Price" required id="price">
+                    <label for="name">Choose a Category</label>
+                    <input type="text" placeholder="Product Category" id="category" required>
+                    <label for="name">Product Quantity</label>
+                    <input type="number" placeholder="Product Quantity" required id="quantity">
+                    <label for="name">Brand Name</label>
+                    <input type="text" placeholder="Brand Name" id="brand" required>
+                    <label for="name">Product Image</label>
+                    <input type="text" placeholder="Product Image" id="image" required>
+                    <input type="submit" id="submit">
+
+                </form>
+            </div>
+    </section>
+
+    <div id="sure">
+        <p>Are You Sure ?</p>
+        <div>
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+        </div>
+    </div>
+<div class="alert">Please Add Product Carefully !</div>
+
+
+</body>
+<script src="./Script file/add_new_product.js"></script>
+
+</html>

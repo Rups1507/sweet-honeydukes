@@ -763,3 +763,6 @@ nav input {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+#for-product div img{
+ width: 30%;
+}

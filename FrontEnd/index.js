@@ -46,7 +46,32 @@ let menArray=[];
 let womenArray=[];
 let kidsArray=[];
 let bagsArray=[];
-
+images =[
+    "AssetsIndexPage/Bengali-sweets2.png",
+    "AssetsIndexPage/dessert.jpg",
+    "AssetsIndexPage/dessert2.jpg",
+    "AssetsIndexPage/dessert.jpg",
+    "AssetsIndexPage/cake.png",
+    "AssetsIndexPage/rajsweet.png",
+   
+   
+    "AssetsIndexPage/Bengali-sweets2.png",
+    "AssetsIndexPage/dessert.jpg",
+    "AssetsIndexPage/dessert2.jpg",
+    "AssetsIndexPage/dessert.jpg",
+    "AssetsIndexPage/cake.png",
+    "AssetsIndexPage/rajsweet.png",
+   
+   
+    "AssetsIndexPage/Bengali-sweets2.png",
+    "AssetsIndexPage/dessert.jpg",
+    "AssetsIndexPage/dessert2.jpg",
+    "AssetsIndexPage/dessert.jpg",
+    "AssetsIndexPage/cake.png",
+    "AssetsIndexPage/rajsweet.png"
+   
+   
+     ]
 
 let cart =[];
 
@@ -109,7 +134,7 @@ function renderingdata1(data){
       })
 
       let img = document.createElement("img")
-      img.setAttribute("src",element.src)
+      img.setAttribute("src",images[index])
       
 
       let div3 = document.createElement("div")
@@ -200,7 +225,7 @@ function renderingdata(data){
       })
 
       let img = document.createElement("img")
-      img.setAttribute("src",element.src)
+      img.setAttribute("src",images[index])
       
 
       let div3 = document.createElement("div")
@@ -289,7 +314,7 @@ function renderingdata2(data){
       })
 
       let img = document.createElement("img")
-      img.setAttribute("src",element.src)
+      img.setAttribute("src",images[index])
       
 
       let div3 = document.createElement("div")
@@ -376,7 +401,7 @@ function renderingdata3(data){
       })
 
       let img = document.createElement("img")
-      img.setAttribute("src",element.src)
+      img.setAttribute("src",images[index])
       
 
       let div3 = document.createElement("div")
@@ -465,7 +490,7 @@ function renderingdata4(data){
       })
 
       let img = document.createElement("img")
-      img.setAttribute("src",element.src)
+      img.setAttribute("src",images[index])
       
 
       let div3 = document.createElement("div")
@@ -558,7 +583,7 @@ function renderingdata5(data){
       })
 
       let img = document.createElement("img")
-      img.setAttribute("src",element.src)
+      img.setAttribute("src",images[index])
       
 
       let div3 = document.createElement("div")

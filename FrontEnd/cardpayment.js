@@ -46,3 +46,4 @@ function carddata(){
     },1000)
     
 }
+

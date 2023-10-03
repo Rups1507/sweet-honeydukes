@@ -1,0 +1,41 @@
+get https://6410847f7b24bb91f21fd94b.mockapi.io/ali
+###
+post https://6410847f7b24bb91f21fd94b.mockapi.io/ali
+Content-Type:application/json
+
+{
+"name":"AAA",
+"email":"aa@gmail.com",
+"password":"apjsd"
+}
+
+
+###
+delete https://6410847f7b24bb91f21fd94b.mockapi.io/ali/6
+
+###
+GET https://63c9170d320a0c4c9540575f.mockapi.io/products
+###
+POST   https://63c9170d320a0c4c9540575f.mockapi.io/products
+Content-Type: application/json
+
+
+{
+  "src": "https://m.media-amazon.com/images/I/81qWlgiJX-L._AC_UL600_FMwebp_QL65_.jpg",
+  "name": "sportsman Tshirt",
+  "Comvalue": 60,
+  "price": 80,
+  "color": "2 Colors",
+  "ratings": 4,
+  "category": "kids",
+  "customerId": "prem",
+  "totalquantity": 50,
+  "status": "pending",
+  "ispurchased": false,
+  "badge": "New!",
+  "Compvalue": "$54.95",
+   "brand":"..."
+}
+
+### 
+delete https://63c9170d320a0c4c9540575f.mockapi.io/products/61

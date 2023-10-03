@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Product of Dressing</title>
+    <link rel="shortcut icon" href="https://iili.io/HN45Qd7.png" type="image/x-icon">
+    <link rel="stylesheet" href="./Styling/all_product.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="">
+                <img src="AssetsIndexPage/Shop.png" alt="logo">
+            </div>
+
+            <span class="logo_name">Honeydukes</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="./admin.html">
+                        <i class="uil uil-estate"></i>
+                        <span class="link-name">Admin Page</span>
+                    </a></li>
+                <li><a href="./Add_Product.html">
+                        <i class="uil uil-files-landscapes"></i>
+                        <span class="link-name">Add Product</span>
+                    </a></li>
+                <li><a href="./update_product.html">
+                        <i class="uil uil-chart"></i>
+                        <span class="link-name">Update Product</span>
+                    </a></li>
+                <li><a href="./manage_order.html">
+                        <i class="uil uil-thumbs-up"></i>
+                        <span class="link-name">Manage Order</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="uil uil-comments"></i>
+                        <span class="link-name">Manage Payment</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="uil uil-share"></i>
+                        <span class="link-name">Check Feedback</span>
+                    </a></li>
+            </ul>
+
+            <ul class="logout-mode">
+                <li><a href="#">
+                        <i class="uil uil-signout"></i>
+                        <span class="link-name">Logout</span>
+                    </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+            <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Search here..." id="search">
+            </div>
+
+            <!--<img src="images/profile.jpg" alt="">-->
+        </div>
+
+        <div class="dash-content">
+            <div class="overview">
+                <div class="title">
+                   <div>
+                   <i class="uil uil-tachometer-fast-alt"></i>
+                    <span class="text">Products Administration</span>
+                   </div>
+                    
+                    <select id="filter">
+                        <option value="">Select Category</option>
+                        <option value="kids">Kids Category</option>
+                        <option value="gifts">All Gifts</option>
+                        <option value="mens">Mens</option>
+                        <option value="women">Women</option>
+                        <option value="bags">Bags</option>
+                        <option value="womens top">Womens top</option>
+                        <option value="womens jeans">Womens jeans</option>
+                        <option value="homedecore">Homedecorate Category</option>
+                    </select>
+                </div>
+
+
+            </div>
+
+            <div id="product_show">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Product Name</th>
+                            <th>Product Category</th>
+                            <th>Product Quantity</th>
+                            <th>Remove Product</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- data should append here -->
+                    </tbody>
+                </table>
+            </div>
+
+    </section>
+
+    <div id="sure">
+        <p>Are You Sure ?</p>
+        <div>
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+        </div>
+    </div>
+
+
+
+</body>
+<script src="./Script file/all_product.js"></script>
+
+</html>
