@@ -102,7 +102,7 @@ http://localhost:8888/swagger-ui/index.html
 
 ## Deployed Link
 
-https://651b97830fd75524c217ea1f--quiet-caramel-cd3981.netlify.app/
+https://651f9ea861aed36035486cfb--sage-taffy-0f4227.netlify.app/
 ## Contributions
 
 We welcome contributions! Feel free to fork the repository, enhance functionalities, and submit pull requests.
