@@ -32,7 +32,8 @@ window.addEventListener("load", () => {
 let logout = document.querySelector(".logout-mode");
 logout.addEventListener("click", () => {
   localStorage.removeItem("check");
-  window.location='./admin.login.html';
+  window.location.href = '/index.html';
+
 });
 
 function getdata() {
