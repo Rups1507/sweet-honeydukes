@@ -149,7 +149,7 @@ async function mensdata() {
 
 
 images =[
-                    "AssetsIndexPage/Bengali-sweets2.png",
+                    "AssetsIndexPage/rasgullaav.jpg",
                     "AssetsIndexPage/dessert.jpg",
                     "AssetsIndexPage/dessert2.jpg",
                     "AssetsIndexPage/dessert.jpg",
@@ -222,10 +222,9 @@ function renderingdata(data) {
     let buttondiv = document.createElement("div");
     buttondiv.classList.add("button-div");
 
-
     let addtocartbtn = document.createElement("button");
     addtocartbtn.innerHTML = "Add To Cart";
-
+      
     addtocartbtn.addEventListener("click" ,()=>{
                     alert("Product added to the cart !");
                     cart.push(element);
@@ -238,11 +237,11 @@ function renderingdata(data) {
 
     buttondiv.append(addtocartbtn, buytbtn);
     div3.append(Name, Category, brand, Price, product_badge);
-
-
-    let buttondiv = document.createElement("div")
-    buttondiv.classList.add("button-div")
-
+    div3.append(buttondiv);
+    div2.append(img);
+    div.append(div2, div3);
+    mainbody.append(div);
+  });
 
     let addtocartbtn = document.createElement("button")
     
@@ -264,13 +263,10 @@ function renderingdata(data) {
     })
     buttondiv.append(addtocartbtn,buytbtn);
     div3.append(Name, Category,brand, Price,product_badge)
-
     div3.append(buttondiv);
-    div2.append(img);
-    div.append(div2, div3);
-    mainbody.append(div);
-  });
+    div2.append(img)
+    div.append(div2,div3)
+    mainbody.append(div)
+    }
+  
 
-
-
-}

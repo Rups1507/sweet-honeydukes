@@ -224,7 +224,7 @@ function renderingdata(data) {
 
     let addtocartbtn = document.createElement("button");
     addtocartbtn.innerHTML = "Add To Cart";
-
+      
     addtocartbtn.addEventListener("click" ,()=>{
                     alert("Product added to the cart !");
                     cart.push(element);
@@ -267,6 +267,6 @@ function renderingdata(data) {
     div2.append(img)
     div.append(div2,div3)
     mainbody.append(div)
-    })
-  }
+    }
+  
 
