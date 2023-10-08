@@ -26,7 +26,7 @@ public class CartServiceImpl implements CartService {
 	public Cart updateCart(Cart cart) throws NoRecordsFoundException {
 		Optional<Cart> op = cartRepo.findById(cart.getCartId());
 		if(op.isPresent()) {
-			cartRepo.save(op.get());
+			cartRepo.save(cart);
 			return cart;
 		}
 		else {

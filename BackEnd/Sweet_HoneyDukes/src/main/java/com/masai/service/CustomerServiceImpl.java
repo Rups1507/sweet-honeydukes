@@ -39,7 +39,7 @@ public class CustomerServiceImpl implements CustomerService {
 		Integer id = u.get().getUserId();
 		Optional<Customer> op = customerRepo.findById(id);
 		if(op.isPresent()) {
-			customerRepo.save(op.get());
+			customerRepo.save(customer);
 			return customer;
 		}
 		else {

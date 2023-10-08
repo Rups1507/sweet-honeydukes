@@ -34,7 +34,7 @@ public Product addProduct(Product product) throws NoRecordsFoundException {
 public Product updateProduct(Product product) throws NoRecordsFoundException {
 	Optional<Product> op = productRepo.findById(product.getProductid());
 	if(op.isPresent()) {
-		productRepo.save(op.get());
+		productRepo.save(product);
 		return product;
 	}
 	else {

@@ -26,7 +26,7 @@ public class SweetItemServiceImpl implements SweetItemService {
 	public SweetItem updateSweetItem(SweetItem sweetItem) throws NoRecordsFoundException {
 		Optional<SweetItem> op = sweetItemRepo.findById(sweetItem.getOrderItemId());
 		if(op.isPresent()) {
-			sweetItemRepo.save(op.get());
+			sweetItemRepo.save(sweetItem);
 			return op.get();
 		}
 		throw new NoRecordsFoundException("No sweet Item found for id: "+sweetItem.getOrderItemId());

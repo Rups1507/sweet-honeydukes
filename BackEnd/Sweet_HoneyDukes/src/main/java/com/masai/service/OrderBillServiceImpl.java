@@ -27,7 +27,7 @@ public class OrderBillServiceImpl implements OrderBillService {
 	public OrderBill updateOrderBill(OrderBill orderBill) throws NoRecordsFoundException {
 		Optional<OrderBill> op = orderBillRepo.findById(orderBill.getOrderBillId());
 		if(op.isPresent()) {
-			orderBillRepo.save(op.get());
+			orderBillRepo.save(orderBill);
 			return op.get();
 		}
 		throw new NoRecordsFoundException("No Order Bill found with orderBillId: " + orderBill.getOrderBillId());
